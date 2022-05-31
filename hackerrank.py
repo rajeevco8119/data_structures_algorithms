@@ -49,3 +49,18 @@ def hashingFreqency(s):
             napp[s[i]] += 1
         else:
             napp[s[i]] = 1
+
+            
+def caesarCipher(s, k):
+    # Write your code here
+    new_str = ''
+    for _ in range(len(s)):
+        if 65 <= ord(s[_]):
+            if ord(s[_]) <= 90:
+                new_str += chr((ord(s[_]) + k-65)%26+65)
+        if 97 <= ord(s[_]):
+            if ord(s[_]) <= 122:
+                new_str += chr((ord(s[_])+k-97)%26+97)
+        if ord(s[_]) <64  or ord(s[_])>90 and ord(s[_])<97 or ord(s[_])>122:
+            new_str += s[_]
+    return new_str
