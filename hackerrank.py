@@ -36,3 +36,16 @@ def staircase2(n):
             else:
                 print(' ',end="")
         print('\r')
+ 
+
+# Hashing Freqency
+
+def hashingFreqency(s):
+    # Write your code here
+    napp = {}
+    res = ''
+    for i in range(len(s)):
+        if s[i] in napp.keys():
+            napp[s[i]] += 1
+        else:
+            napp[s[i]] = 1
