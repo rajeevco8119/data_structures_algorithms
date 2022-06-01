@@ -64,3 +64,27 @@ def caesarCipher(s, k):
         if ord(s[_]) <64  or ord(s[_])>90 and ord(s[_])<97 or ord(s[_])>122:
             new_str += s[_]
     return new_str
+
+# Balanced Parenthesis
+def balancedParenthesis(s):
+    stack = []
+    for i in s:
+        if i in ['(', '{', '[']:
+            stack.append(i)
+        else:
+            if not stack:
+                return False
+            char = stack.pop()
+            if i == ')':
+                if char != '(':
+                    return False
+            if i == '}':
+                if char != '{':
+                    return False
+            if i == ']':
+                if char != '[':
+                    return False
+    return True
+
+expr = "{[()}]"
+# print(balancedParenthesis(expr))
