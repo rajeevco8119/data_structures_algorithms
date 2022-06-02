@@ -16,3 +16,14 @@ def rotateLeft(d, arr):
         temp.append(arr[i])
     arr = arr[d:]
     return arr+temp
+
+def matchingStrings(strings, queries):
+    # Write your code here
+    counts = []
+    for i in queries:
+        count = 0
+        for j in strings:
+            if j == i:
+                count += 1
+        counts.append(count)
+    return counts
