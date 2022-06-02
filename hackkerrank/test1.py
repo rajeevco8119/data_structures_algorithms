@@ -1,7 +1,6 @@
 # Time complexity worst
 
 def rotateLeft(d, arr):
-    # Write your code here
     while d > 0:
         temp = arr[0]    
         for i in range(len(arr)-1):
