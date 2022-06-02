@@ -107,3 +107,13 @@ def gradingStudents(grades):
             temp = j
         grades[i] = temp
     return grades
+
+# Hourglass sum 2D array
+def hourglass(a):
+    hg = 0
+    all_hg = []
+    for i in range(len(a)-2):
+        for j in range(len(a[i])-2):
+            hg = a[i][j]+a[i][j+1]+a[i][j+2]+a[i+1][j+1]+a[i+2][j]+a[i+2][j+1]+a[i+2][j+2]
+            all_hg.append(hg)
+    return max(all_hg)
