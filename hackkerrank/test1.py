@@ -9,3 +9,11 @@ def rotateLeft(d, arr):
         arr[len(arr)-1] = temp
         d -= 1
     return arr
+
+# Rotate in single loop
+def rotateLeft(d, arr):
+    temp = []
+    for i in range(0,d):
+        temp.append(arr[i])
+    arr = arr[d:]
+    return arr+temp
