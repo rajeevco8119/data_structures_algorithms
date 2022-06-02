@@ -88,3 +88,22 @@ def balancedParenthesis(s):
 
 expr = "{[()}]"
 # print(balancedParenthesis(expr))
+
+
+# Grading Students
+def gradingStudents(grades):
+    # Write your code here
+    for i in range(0,len(grades)):
+        temp = grades[i]
+        j = grades[i]
+        if j < 38:
+            continue
+        while j%5!=0:
+            j += 1
+        #print(str(j)+' '+str(grades[i]))
+        if j-grades[i] > 2:
+            temp = grades[i]
+        else:
+            temp = j
+        grades[i] = temp
+    return grades
