@@ -27,3 +27,18 @@ def matchingStrings(strings, queries):
                 count += 1
         counts.append(count)
     return counts
+
+# Largest sum contiguous subarray using Kadane's algorithm
+def maxSumSubarraySum(arr):
+    max_so_far,max_ending_here = 0,0
+    for i in range(len(arr)):
+        max_so_far += arr[i]
+
+        if max_ending_here<max_so_far:
+            max_ending_here = max_so_far
+        if max_so_far < 0:
+            max_so_far = 0
+    return max_ending_here
+
+# a = [-2, -3, 4, -1, -2, 1, 5, -3]
+# print(maxSumSubarraySum(a))
