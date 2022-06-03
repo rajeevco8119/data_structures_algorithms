@@ -61,3 +61,22 @@ def substringSearchAnagram(arr, substr):
             count += 1
     print(count)
 # substringSearchAnagram(txt,pat)
+
+# Longest Subarray consisting of unique elements from an Array
+def uniqueSubarray1(arr):
+    longest = 0
+    length = 0
+    aux_array = []
+    for i in range(len(arr)):
+        if longest < length:
+            longest = length
+        if arr[i] not in aux_array:
+            aux_array.append(arr[i])
+            length += 1
+        else:
+            length = 1
+            aux_array = []
+    return longest
+
+# arr = [1, 2, 3, 4, 5, 1, 2, 3]
+# print(uniqueSubarray(arr))
