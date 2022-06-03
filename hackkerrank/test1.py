@@ -28,6 +28,8 @@ def matchingStrings(strings, queries):
         counts.append(count)
     return counts
 
+
+
 # Maximum sum using k consecutive elements using sliding window
 def maxSum(arr, k):
     sum, max_sum = 0, 0
@@ -38,3 +40,22 @@ def maxSum(arr, k):
         if sum > max_sum:
             max_sum = sum
     print(max_sum)
+    
+ip1 = [100, 200, 300, 400]
+# maxSum(ip1,2)
+ip2 = [1, 4, 2, 10, 23, 3, 1, 0, 20]
+# maxSum(ip2,4)
+
+# Sliding window technique for max sum in single loop
+def maxSumSlidingWindow(arr, k):
+    if len(arr) < k:
+        return -1
+    existing_sum = sum(arr[:k])
+    max_sum = existing_sum
+    for i in range(len(arr)-k):
+        existing_sum = existing_sum-arr[i]+arr[i+k]
+        if max_sum<existing_sum:
+            max_sum = existing_sum
+    print(max_sum)
+
+# maxSumSlidingWindow(ip2,4)
