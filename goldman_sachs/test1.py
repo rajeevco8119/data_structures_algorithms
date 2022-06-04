@@ -78,4 +78,4 @@ def consectiveNosum(no):
             count += 1
     return count-1
 
-print(consectiveNosum(10))
+# print(consectiveNosum(10))
