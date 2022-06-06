@@ -119,6 +119,21 @@ def reverseLL(head):
     printlist(head)
     return
 
+# Sort list with array
+def sortLinkedListwithArray(head):
+    arr = []
+    temp = head
+    while temp:
+        arr.append(temp.data)
+        temp = temp.next
+    arr.sort()
+    node = None
+    for i in arr:
+        node = push(node, i)
+    reverseLL(node)
+    printlist(node)
+    return
+
 
 # head = None
 # head = Node(10)
@@ -142,6 +157,7 @@ def reverseLL(head):
 # print('-----')
 # removeFirstNode(head)
 # printlist(head)
+
 
 
 head = None
